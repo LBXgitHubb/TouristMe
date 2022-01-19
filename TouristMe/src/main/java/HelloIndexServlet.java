@@ -39,11 +39,7 @@ public class HelloIndexServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-	String yourName = request.getParameter("yourName");
 	
-	PrintWriter writer = response.getWriter();
-	writer.println("<h1> Hello "+ yourName + "</h1>");
-	writer.close();
 		
 		doGet(request, response);
 	}
