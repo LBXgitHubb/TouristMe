@@ -51,47 +51,41 @@ public class RegisterServlet extends HttpServlet {
 		String rePassword = request.getParameter("re-password");
 		String role = "admin";
 
-		if (password.equals("Apple")) {
-			if(password.equals(rePassword)) {
-				
-			
-			try {
-				Class.forName("com.mysql.jdbc.Driver");
-				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/accounts", "root",
-						"password");
+		if (password.equals("5YuVy5*-_z^G3j-5")) {
+			if (password.equals(rePassword)) {
 
-				// Step 4: implement the sql query using prepared statement
-				PreparedStatement ps = con.prepareStatement("insert into USERS values(?,?,?)");
-				// Step 5: parse in the data retrieved from the web form request into the
-				// prepared statement
-				// accordingly
+				try {
+					Class.forName("com.mysql.jdbc.Driver");
+					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/accounts", "root",
+							"password");
 
-				// ps.setString(1, n);
-				ps.setString(1, userName);
-				ps.setString(2, password);
-				ps.setString(3, role);
-				// Step 6: perform the query on the database using the prepared statement
-				int i = ps.executeUpdate();
-				// Step 7: check if the query had been successfully execute, return “You are
-				// successfully
-				// registered” via the response,
-				if (i > 0) {
-					PrintWriter writer = response.getWriter();
-					writer.println(
-							"<h1>" + "You have successfully registered an account!" + "<br>" + userName + "</h1>");
-					writer.close();
+					PreparedStatement ps = con.prepareStatement("insert into USERS values(?,?,?)");
+
+					ps.setString(1, userName);
+					ps.setString(2, password);
+					ps.setString(3, role);
+
+					int i = ps.executeUpdate();
+					// Step 7: check if the query had been successfully execute, return “You are
+					// successfully
+					// registered” via the response,
+					if (i > 0) {
+						PrintWriter writer = response.getWriter();
+						writer.println(
+								"<h1>" + "You have successfully registered an account!" + "<br>" + userName + "</h1>");
+						writer.close();
+					}
+				} catch (Exception exception) {
+
+					System.out.println(exception);
+					out.close();
 				}
-			} catch (Exception exception) {
-
-				System.out.println(exception);
-				out.close();
-			}
 			} else {
 				PrintWriter writer = response.getWriter();
 				writer.println("<h1>" + "password does not match!" + "<br>" + userName + "</h1>");
 
 				writer.close();
-				}
+			}
 		} else {
 			PrintWriter writer = response.getWriter();
 			writer.println("<h1>" + "You had Keyed in the wrong password!" + "<br>" + userName + "</h1>");
