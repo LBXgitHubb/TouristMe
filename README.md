@@ -10,3 +10,7 @@ Go to Project Properties -> Maven -> Project Facets -> Look for Java -> Change t
 
 -----------------------------------------------------------------------------------------
 Be sure to notify me when you guys want to do a merge
+
+-----------------------------------------------------------------------------------------
+use this password to login as the admin:
+5YuVy5*-_z^G3j-5
