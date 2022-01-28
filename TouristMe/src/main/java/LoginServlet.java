@@ -46,6 +46,7 @@ public class LoginServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		String userName = request.getParameter("userName");
 		String password = request.getParameter("password");
+		int status = 1;
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -54,6 +55,8 @@ public class LoginServlet extends HttpServlet {
 
 			// Step 4: implement the sql query using prepared statement
 			PreparedStatement ps = con.prepareStatement("SELECT userName, password from users where BINARY userName=? and BINARY password=?;");
+			PreparedStatement qs = con.prepareStatement("UPDATE users SET status = ? WHERE userName = ?;");
+			
 			// Step 5: parse in the data retrieved from the web form request into the
 			// prepared statement
 			// accordingly
@@ -70,6 +73,16 @@ public class LoginServlet extends HttpServlet {
 				writer.println(
 						"<h1>" + "You have Successfully login!" + "<br>" + userName + "</h1>");
 				writer.close();
+				
+				qs.setInt(1, status);
+				qs.setString(2, userName);
+				System.out.println(status);
+				System.out.println(userName);
+				int i = qs.executeUpdate();
+				//Step 3: redirect back to UserServlet (note: remember to change the url to your project name)
+				response.sendRedirect("http://localhost:8090/TouristME/login.jsp");
+				
+				
 				
 			}else {
 				PrintWriter writer = response.getWriter();

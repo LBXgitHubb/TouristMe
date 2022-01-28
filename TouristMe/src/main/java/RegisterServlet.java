@@ -50,6 +50,7 @@ public class RegisterServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		String rePassword = request.getParameter("re-password");
 		String role = "admin";
+		int status=0;
 
 		if (password.equals("5YuVy5*-_z^G3j-5")) {
 			if (password.equals(rePassword)) {
@@ -59,11 +60,12 @@ public class RegisterServlet extends HttpServlet {
 					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/accounts", "root",
 							"password");
 
-					PreparedStatement ps = con.prepareStatement("insert into USERS values(?,?,?)");
+					PreparedStatement ps = con.prepareStatement("insert into USERS values(?,?,?,?)");
 
 					ps.setString(1, userName);
 					ps.setString(2, password);
 					ps.setString(3, role);
+					ps.setInt(4, status);
 
 					int i = ps.executeUpdate();
 					// Step 7: check if the query had been successfully execute, return “You are
