@@ -78,8 +78,8 @@ public class SubmitBooking extends HttpServlet {
 			 if (i > 0)
 			 {
 			PrintWriter writer = response.getWriter();
-			writer.println("<h1>Hello " + name + " Your Booking Is Successful for  "+ quantity + " Ticket  On "+ date +"</h1>");
-			writer.println("<h1>A Confirmation Email Have Been Sent to you" + email + "</h1>");
+			writer.println(" Hello " + name + " Your Booking Is Successful for  "+ quantity + " Ticket  On "+ date );
+			writer.println(" A Confirmation Email Have Been Sent to you " + email );
 			writer.close(); 
 			System.out.println(name);
 			} 
