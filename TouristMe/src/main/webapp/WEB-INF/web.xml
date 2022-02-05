@@ -12,7 +12,7 @@
 
 	<servlet>
 		<servlet-name>UserServlet</servlet-name>
-		<servlet-class>UserServlet</servlet-class>
+		<servlet-class>UserServlet</servlet-class>	
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>UserServlet</servlet-name>
@@ -21,4 +21,20 @@
 		<url-pattern>/UserServlet/update</url-pattern>
 		<url-pattern>/UserServlet/delete</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+ <servlet-name>ListingServlet</servlet-name>
+ <servlet-class>ListingServlet</servlet-class>
+ </servlet>
+
+ <servlet-mapping>
+ <servlet-name>ListingServlet</servlet-name>
+<url-pattern>/ListingServlet/dashboard</url-pattern>
+ <url-pattern>/ListingServlet/edit</url-pattern>
+ <url-pattern>/ListingServlet/update</url-pattern>
+ <url-pattern>/ListingServlet/delete</url-pattern>
+ </servlet-mapping>
+	
+	
+	
 </web-app>
