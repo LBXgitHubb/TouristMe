@@ -23,6 +23,7 @@ crossorigin="anonymous">
 <a href="<%=request.getContextPath()%>/AttractionBooking.jsp" class="btn btn-success">Add New Booking</a>
 </div>
 <br>
+
 <!-- Create a table to list out all current bookings information -->
 <table class="table">
 <thead>
