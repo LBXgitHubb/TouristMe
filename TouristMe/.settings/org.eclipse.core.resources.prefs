@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
 encoding//src/main/webapp/users.jsp=UTF-8
+=======
+encoding//src/main/webapp/bookingManagement.jsp=UTF-8
+>>>>>>> refs/heads/AttractionBooking

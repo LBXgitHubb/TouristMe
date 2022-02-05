@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+
 	<display-name>TouristMe</display-name>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
@@ -35,6 +36,18 @@
  <url-pattern>/ListingServlet/delete</url-pattern>
  </servlet-mapping>
 	
+ <servlet>
+ <servlet-name>bookingservlet</servlet-name>
+ <servlet-class>bookingservlet</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+ <servlet-name>bookingservlet</servlet-name>
+<url-pattern>/bookingservlet/dashboard</url-pattern>
+ <url-pattern>/bookingservlet/edit</url-pattern>
+ <url-pattern>/bookingservlet/update</url-pattern>
+ <url-pattern>/bookingservlet/delete</url-pattern>
+ </servlet-mapping>	
 	
-	
+
 </web-app>
