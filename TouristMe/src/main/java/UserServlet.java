@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class UserServlet
@@ -22,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/UserServlet")
 public class UserServlet extends HttpServlet {
 
-	private String jdbcURL = "jdbc:mysql://localhost:3306/accounts";
+	private String jdbcURL = "jdbc:mysql://localhost:3306/touristme";
 	private String jdbcUsername = "root";
 	private String jdbcPassword = "password";
 
@@ -63,10 +64,12 @@ public class UserServlet extends HttpServlet {
 		String action = request.getServletPath();
 		try {
 			switch (action) {
+			case "/UserServlet/logout":
+				logoutUser(request,response);
+				break;
 			case "/UserServlet/delete":
 				deleteUser(request, response);
 				break;
-
 			case "/UserServlet":
 				listUsers(request, response);
 				break;
@@ -91,6 +94,32 @@ public class UserServlet extends HttpServlet {
 		response.sendRedirect("http://localhost:8090/TouristMe/UserServlet");
 	}
 
+	private void logoutUser(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+		// Step 1: Retrieve value from the request
+		HttpSession session = request.getSession();
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/touristme", "root", "password");
+		PreparedStatement qs = con.prepareStatement("UPDATE users SET status = ? WHERE userName = ?;");
+	
+		session.getAttribute("username");
+		session.setAttribute("status", 0);
+		
+		String iusername = session.getAttribute("username").toString();
+		
+		
+		qs.setInt(1, 0);
+		qs.setString(2, iusername);
+		
+		int i = qs.executeUpdate();
+		
+		response.sendRedirect("http://localhost:8090/TouristMe/ShowListing");
+		
+	}
+	
+	
+	
+	
+	
+	
 	private void listUsers(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 		List<User> users = new ArrayList<>();
@@ -112,7 +141,6 @@ public class UserServlet extends HttpServlet {
 		}
 		request.setAttribute("listUsers", users);
 		request.getRequestDispatcher("/users.jsp").forward(request, response);
-
 	}
 
 	/**

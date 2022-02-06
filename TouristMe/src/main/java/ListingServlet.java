@@ -20,15 +20,15 @@ import javax.servlet.RequestDispatcher;
 @WebServlet("/ListingServlet")
 public class ListingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private String jdbcURL = "jdbc:mysql://localhost:3306/listingsdetails";
+	private String jdbcURL = "jdbc:mysql://localhost:3306/touristme";
 	 private String jdbcUsername = "root";
-	 private String jdbcPassword = "T0214511H";
-	 private static final String INSERT_LISTINGS_SQL = "INSERT INTO ListingsDetails" + " (name, region, price, address, type, details, image) VALUES " +
-			  " (?, ?, ?, ?, ?, ?, ?);";
-			  private static final String SELECT_LISTING_BY_ID = "select name,region,price,address,type,details,image from ListingsDetails where name =?";
-			  private static final String SELECT_ALL_LISTINGS = "select * from ListingsDetails ";
-			  private static final String DELETE_LISTINGS_SQL = "delete from ListingsDetails where name = ?;";
-			  private static final String UPDATE_LISTINGS_SQL = "update ListingsDetails set name = ?,region= ?,price =?,address =?,type =?,details =?,image =? where name = ?;";
+	 private String jdbcPassword = "password";
+	 private static final String INSERT_LISTINGS_SQL = "INSERT INTO attractions" + " (name, region, price, address, type, details, image) VALUES " +  " (?, ?, ?, ?, ?, ?, ?);";
+			 
+			  private static final String SELECT_LISTING_BY_ID = "select name,region,price,address,type,details,image from attractions where name =?";
+			  private static final String SELECT_ALL_LISTINGS = "select * from attractions ";
+			  private static final String DELETE_LISTINGS_SQL = "delete from attractions where name = ?;";
+			  private static final String UPDATE_LISTINGS_SQL = "update attractions set name = ?,region= ?,price =?,address =?,type =?,details =?,image =? where name = ?;";
 			  protected Connection getConnection() {
 				  Connection connection = null;
 				  try {

@@ -12,6 +12,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 
 /**
  * Servlet implementation class LoginServlet
@@ -19,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -42,6 +44,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		HttpSession session = request.getSession(); 
 		
 		PrintWriter out = response.getWriter();
 		String userName = request.getParameter("userName");
@@ -50,7 +53,7 @@ public class LoginServlet extends HttpServlet {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/accounts", "root",
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/touristme", "root",
 					"password");
 
 			// Step 4: implement the sql query using prepared statement
@@ -61,7 +64,6 @@ public class LoginServlet extends HttpServlet {
 			// prepared statement
 			// accordingly
 
-			
 			ps.setString(1, userName);
 			ps.setString(2, password);
 		
@@ -70,8 +72,7 @@ public class LoginServlet extends HttpServlet {
 				
 				
 				PrintWriter writer = response.getWriter();
-				writer.println(
-						"<h1>" + "You have Successfully login!" + "<br>" + userName + "</h1>");
+				writer.println("<h1>" + "You have Successfully login!" + "<br>" + userName + "</h1>");
 				writer.close();
 				
 				qs.setInt(1, status);
@@ -79,9 +80,10 @@ public class LoginServlet extends HttpServlet {
 				System.out.println(status);
 				System.out.println(userName);
 				int i = qs.executeUpdate();
+				session.setAttribute("status", status);
+				session.setAttribute("username",userName);
 				//Step 3: redirect back to UserServlet (note: remember to change the url to your project name)
 				response.sendRedirect("http://localhost:8090/TouristME/login.jsp");
-				
 				
 				
 			}else {

@@ -51,8 +51,8 @@ public class AdminListingsServlet extends HttpServlet {
 		try {
 			 Class.forName("com.mysql.jdbc.Driver");
 			 Connection con = DriverManager.getConnection(
-			 "jdbc:mysql://localhost:3306/listingsdetails", "root", "T0214511H");
-			 PreparedStatement ps = con.prepareStatement("insert into LISTINGSDETAILS values(?,?,?,?,?,?,?)");
+			 "jdbc:mysql://localhost:3306/touristme", "root", "password");
+			 PreparedStatement ps = con.prepareStatement("insert into attractions values(?,?,?,?,?,?,?)");
 			 ps.setString(1, n);
 			 ps.setString(2, p);
 			 ps.setString(3, e);

@@ -60,9 +60,9 @@ public class SubmitBooking extends HttpServlet {
 		try {
 			 Class.forName("com.mysql.jdbc.Driver");
 			 
-			 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookingdetails", "root", "password");
+			 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/touristme", "root", "password");
 			
-			 PreparedStatement ps = con.prepareStatement("INSERT into bookingdetails values(?,?,?,?,?,?,?)");
+			 PreparedStatement ps = con.prepareStatement("INSERT into bookdetails values(?,?,?,?,?,?,?)");
 			
 			 ps.setString(1, name);
 			 ps.setString(2, email);

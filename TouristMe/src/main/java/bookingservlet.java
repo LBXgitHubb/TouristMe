@@ -30,7 +30,7 @@ public class bookingservlet extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
 	
-	private String jdbcURL = "jdbc:mysql://localhost:3306/bookingdetails";
+	private String jdbcURL = "jdbc:mysql://localhost:3306/touristme";
 	private String jdbcUsername = "root";
 	private String jdbcPassword = "password";
 	

@@ -21,6 +21,7 @@
 		<url-pattern>/UserServlet/edit</url-pattern>
 		<url-pattern>/UserServlet/update</url-pattern>
 		<url-pattern>/UserServlet/delete</url-pattern>
+		<url-pattern>/UserServlet/logout</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>

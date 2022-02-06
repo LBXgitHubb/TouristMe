@@ -8,16 +8,15 @@
 crossorigin="anonymous">
 
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Attractions</title>
 </head>
 <body>
 <div class="row">
 <div class="container">
-<h3 class="text-center">List of Users</h3>
+<h3 class="text-center">List of attractions</h3>
 <hr>
 <div class="container text-left">
 <!-- Add new user button redirects to the register.jsp page -->
-<a href="<%=request.getContextPath()%>/AdminListings.jsp" class="btn btnsuccess">Add New User</a>
 </div>
 <br>
 <!-- Create a table to list out all current users information -->
@@ -60,7 +59,7 @@ information accordingly -->
 <c:out value="${listing.details}" />
 </td>
 <td>
-<img src="data:image/png;base64,'.base64_encode(${listing.image}).'"/>
+<img src="${listing.image}"/>
 <td>
 <a href="edit?name=<c:out value='${listing.name}'
 />">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp;

@@ -10,8 +10,6 @@ public class Listings {
 		this.type = type;
 		this.details = details;
 		this.image = image;
-
-
 	}
 	 protected String region;
 	 protected String price;
