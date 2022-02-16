@@ -16,10 +16,18 @@
 	<h1 class="blue">Create New User Here</h1>
 	<div>
 		<form action="RegisterServlet" method="post">
-			Username:<input type="text" name="userName"> Password:<input
-				type="password" name="password"> Confirm password:<input
-				type="password" name="re-password"> <input type="submit"
-				value="Create!"/>
+			
+				Username:<input type="text" name="userName">
+			
+			
+				Password:<input type="password" name="password">
+			
+			
+				Confirm password:<input type="password" name="re-password">
+			
+		
+			<input type="submit" value="Create!" id="submit" />
+			
 		</form>
 	</div>
 

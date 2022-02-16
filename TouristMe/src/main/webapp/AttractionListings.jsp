@@ -27,15 +27,15 @@
 		<ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
 		
 			<c:if test="${status == '1'}">	
-        	<li><a href="<%=request.getContextPath()%>/UserServlet/logout"> logout </a></li>
+        	<li><a href="<%=request.getContextPath()%>/UserServlet/logout" id="logout"> logout </a></li>
         	<li><a href="ListingServlet/dashboard" class="nav-link px-2 link-dark">Admin View</a></li>
         	<br/>
 			</c:if>
 			<c:if test="${status != '1'}">	
-        	<li><a href="login.jsp" class="nav-link px-2 link-dark">Login</a></li>
+        	<li><a href="login.jsp" class="nav-link px-2 link-dark" id="login">Login</a></li>
         	<br/>   
         	</c:if>	
-			<li><a href="register.jsp" class="nav-link px-2 link-dark">Register</a></li>
+			<li><a href="register.jsp" class="nav-link px-2 link-dark" id="register">Register</a></li>
 			<li><a href="AttractionBooking.jsp" class="nav-link px-2 link-dark">Booking</a></li>
 		</ul>
 
