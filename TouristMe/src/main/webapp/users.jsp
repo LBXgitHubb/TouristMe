@@ -38,7 +38,7 @@
 							<td><c:out value="${user.role}" /></td>
 							<td><c:out value="${user.status}" /></td>
 							<!-- For each user in the database, Edit/Delete buttons which invokes the edit/delete functions -->
-							<td> <a href="UserServlet/delete?userName=<c:out value='${user.userName}' />">Delete</a></td>
+							<td> <a href="UserServlet/delete?userName=<c:out value='${user.userName}' />" id =<c:out value='${user.userName}' />>Delete</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

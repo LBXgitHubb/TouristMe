@@ -29,6 +29,7 @@
 			<c:if test="${status == '1'}">	
         	<li><a href="<%=request.getContextPath()%>/UserServlet/logout" id="logout"> logout </a></li>
         	<li><a href="ListingServlet/dashboard" class="nav-link px-2 link-dark">Admin View</a></li>
+        	<li><a href="UserServlet" class="nav-link px-2 link-dark" id="users">users</a></li>
         	<br/>
 			</c:if>
 			<c:if test="${status != '1'}">	

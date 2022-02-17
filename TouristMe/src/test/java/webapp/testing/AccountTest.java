@@ -18,19 +18,35 @@ public class AccountTest {
 		driver.get("http://localhost:8090/TouristMe/ShowListing");
 		// clicking register.
 
-		driver.findElement(By.id("register")).click();
+		//driver.findElement(By.id("register")).click();
 
-		driver.findElement(By.name("userName")).sendKeys("mrp");
-		driver.findElement(By.name("password")).sendKeys("5YuVy5*-_z^G3j-5");
-		driver.findElement(By.name("re-password")).sendKeys("5YuVy5*-_z^G3j-5");
+		//driver.findElement(By.name("userName")).sendKeys("mrbp");
+		//driver.findElement(By.name("password")).sendKeys("5YuVy5*-_z^G3j-5");
+		//driver.findElement(By.name("re-password")).sendKeys("5YuVy5*-_z^G3j-5");
 
-		driver.findElement(By.id("submit")).submit();
+		//driver.findElement(By.id("submit")).submit();
 
 		// navigate back to homepage
+		//driver.get("http://localhost:8090/TouristMe/ShowListing");
+		
+	
+		
+		//login
+		driver.findElement(By.id("login")).click();
+		driver.findElement(By.name("userName")).sendKeys("tim");
+		driver.findElement(By.name("password")).sendKeys("5YuVy5*-_z^G3j-5");
+		driver.findElement(By.id("submit")).submit();
+		//routing back to home page
 		driver.get("http://localhost:8090/TouristMe/ShowListing");
 		
-		//do login logout and delete user
-
+		driver.findElement(By.id("users")).click();
+		
+		driver.findElement(By.id("mrp")).click();
+		
+		//driver.findElement(By.linkText("UserServlet/delete?userName=mrp id =mrp")).click();
+		
+		//driver.findElement(By.xpath("UserServlet/delete?userName=mrp")).click();
+		
 	}
 
 	@BeforeTest

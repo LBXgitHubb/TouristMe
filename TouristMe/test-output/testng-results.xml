@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="2941" started-at="2022-02-17T01:30:03Z" finished-at="2022-02-17T01:30:06Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="2941" started-at="2022-02-17T01:30:03Z" finished-at="2022-02-17T01:30:06Z">
+      <class name="webapp.testing.AccountTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:webapp.testing.AccountTest@a227af]" name="beforeTest" is-config="true" duration-ms="8" started-at="2022-02-17T09:30:03Z" finished-at="2022-02-17T09:30:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="f()[pri:0, instance:webapp.testing.AccountTest@a227af]" name="f" duration-ms="2923" started-at="2022-02-17T09:30:03Z" finished-at="2022-02-17T09:30:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:webapp.testing.AccountTest@a227af]" name="afterTest" is-config="true" duration-ms="0" started-at="2022-02-17T09:30:06Z" finished-at="2022-02-17T09:30:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- webapp.testing.AccountTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
