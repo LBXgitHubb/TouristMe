@@ -26,11 +26,16 @@ public class AccountTest {
 
 		driver.findElement(By.id("submit")).submit();
 		
+		//route back and create another user
 		driver.get("http://localhost:8090/TouristMe/ShowListing");
+		
+		driver.findElement(By.id("register")).click();
 		
 		driver.findElement(By.name("userName")).sendKeys("mrbp");
 		driver.findElement(By.name("password")).sendKeys("5YuVy5*-_z^G3j-5");
 		driver.findElement(By.name("re-password")).sendKeys("5YuVy5*-_z^G3j-5");
+		
+		driver.findElement(By.id("submit")).submit();
 	
 		// navigate back to home page and do login
 		driver.get("http://localhost:8090/TouristMe/ShowListing");
@@ -47,6 +52,7 @@ public class AccountTest {
 		driver.findElement(By.id("mrp")).click();
 		
 		//logout
+		driver.get("http://localhost:8090/TouristMe/ShowListing");
 		driver.findElement(By.id("logout")).click();
 		
 		
