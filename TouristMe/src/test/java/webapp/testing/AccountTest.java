@@ -16,37 +16,41 @@ public class AccountTest {
 
 		// navigate the browser to this url
 		driver.get("http://localhost:8090/TouristMe/ShowListing");
-		// clicking register.
-
-		//driver.findElement(By.id("register")).click();
-
-		//driver.findElement(By.name("userName")).sendKeys("mrbp");
-		//driver.findElement(By.name("password")).sendKeys("5YuVy5*-_z^G3j-5");
-		//driver.findElement(By.name("re-password")).sendKeys("5YuVy5*-_z^G3j-5");
-
-		//driver.findElement(By.id("submit")).submit();
-
-		// navigate back to homepage
-		//driver.get("http://localhost:8090/TouristMe/ShowListing");
 		
+		// creating 2 new user.
+		driver.findElement(By.id("register")).click();
+
+		driver.findElement(By.name("userName")).sendKeys("mrp");
+		driver.findElement(By.name("password")).sendKeys("5YuVy5*-_z^G3j-5");
+		driver.findElement(By.name("re-password")).sendKeys("5YuVy5*-_z^G3j-5");
+
+		driver.findElement(By.id("submit")).submit();
+		
+		driver.get("http://localhost:8090/TouristMe/ShowListing");
+		
+		driver.findElement(By.name("userName")).sendKeys("mrbp");
+		driver.findElement(By.name("password")).sendKeys("5YuVy5*-_z^G3j-5");
+		driver.findElement(By.name("re-password")).sendKeys("5YuVy5*-_z^G3j-5");
 	
+		// navigate back to home page and do login
+		driver.get("http://localhost:8090/TouristMe/ShowListing");
 		
-		//login
 		driver.findElement(By.id("login")).click();
 		driver.findElement(By.name("userName")).sendKeys("tim");
 		driver.findElement(By.name("password")).sendKeys("5YuVy5*-_z^G3j-5");
 		driver.findElement(By.id("submit")).submit();
-		//routing back to home page
+		
+		//routing back to home page click user and delete user
 		driver.get("http://localhost:8090/TouristMe/ShowListing");
 		
 		driver.findElement(By.id("users")).click();
-		
 		driver.findElement(By.id("mrp")).click();
 		
-		//driver.findElement(By.linkText("UserServlet/delete?userName=mrp id =mrp")).click();
+		//logout
+		driver.findElement(By.id("logout")).click();
 		
-		//driver.findElement(By.xpath("UserServlet/delete?userName=mrp")).click();
 		
+
 	}
 
 	@BeforeTest
@@ -59,4 +63,3 @@ public class AccountTest {
 
 }
 
-//driver.findElement(By.name("userName")).sendKeys("hello");
