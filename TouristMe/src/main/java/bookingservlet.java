@@ -173,7 +173,7 @@ public class bookingservlet extends HttpServlet {
 						  statement.setString(8, oriName);
 						  int i = statement.executeUpdate();
 						  } 
-				 response.sendRedirect("http://localhost:8081/TouristMe/bookingservlet/dashboard");
+				 response.sendRedirect("http://localhost:8080/TouristMe/bookingservlet/dashboard");
 				 }
 	
 	private void deleteBooking(HttpServletRequest request, HttpServletResponse response)
@@ -184,7 +184,7 @@ public class bookingservlet extends HttpServlet {
 						 statement.setString(1, name);
 						 int i = statement.executeUpdate();
 						 }
-				response.sendRedirect("http://localhost:8081/TouristMe/bookingservlet/dashboard");
+				response.sendRedirect("http://localhost:8080/TouristMe/bookingservlet/dashboard");
 				}
 
 }
