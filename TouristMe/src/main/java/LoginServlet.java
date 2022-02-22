@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -71,15 +71,16 @@ public class LoginServlet extends HttpServlet {
 			if(re.next()) {
 				
 				
-				PrintWriter writer = response.getWriter();
-				writer.println("<h1>" + "You have Successfully login!" + "<br>" + userName + "</h1>");
-				writer.close();
+			
 				
 				qs.setInt(1, status);
 				qs.setString(2, userName);
 				System.out.println(status);
 				System.out.println(userName);
 				int i = qs.executeUpdate();
+				out.println(
+						"Success");
+				out.close();
 				session.setAttribute("status", status);
 				session.setAttribute("username",userName);
 				//Step 3: redirect back to UserServlet (note: remember to change the url to your project name)
@@ -87,10 +88,10 @@ public class LoginServlet extends HttpServlet {
 				
 				
 			}else {
-				PrintWriter writer = response.getWriter();
-				writer.println(
-						"<h1>" + "You had enter the wrong username or password" + "<br>" + userName + "</h1>");
-				writer.close();
+				out.println(
+						"Failure");
+				out.close();
+
 			}
 			
 		} catch (Exception exception) {
