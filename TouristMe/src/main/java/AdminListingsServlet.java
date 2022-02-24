@@ -64,7 +64,7 @@ public class AdminListingsServlet extends HttpServlet {
 			 int i = ps.executeUpdate();
 			 if (i > 0){
 				 PrintWriter writer = response.getWriter();
-				 writer.println("<h1>" + "You have successfully registered an account!" +
+				 writer.println("<h1>" + "successfully registered an attraction" +
 				 "</h1>");
 				 writer.close();
 				 }
